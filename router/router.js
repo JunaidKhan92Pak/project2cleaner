@@ -30,7 +30,7 @@ router.get("/", dataCheck, async (req, res) => {
 
 router.get("/about", dataCheck, (req, res) => {
     if (req.User) {
-        const UserData = req.User;
+        const UserData = req.User; 
         res.render("about", { FName: UserData.firstname })
     }
     else {
