@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>links}}
+  <title>profile</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main-body">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="main-breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/profile"> User Profile</a></li>
+        </ol>
+      </nav>
+      <!-- /Breadcrumb -->
+
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                  width="150">
+                <div class="mt-3">
+                  <h4>{{UserData.firstname}} {{UserData.lastName}}</h4>
+                  <p class="text-secondary mb-1">{{UserData.JobTitel}}</p>
+                  <p class="text-muted font-size-sm">{{UserData.Address}}</p>
+                  <form action="/logout" method="get">
+                    <button class="btn btn-primary" type="submit">Logout</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Full Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{UserData.firstname}} {{UserData.lastName}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{UserData.email}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Phone</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{UserData.phone}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Date of Brith</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{UserData.dob}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Address</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{UserData.Address}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                  <a class="btn btn-info " target="__blank" href="/editProfile">Edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="PostContainer">
+        <form action="/profile" method="post" style="width: 100%;">
+          <h1>Post Your Blog Here</h1>
+          <div class="PostInput">
+            <input type="text" placeholder=" Blog Title (Max Word 20)" id="BlogInput" name="blogTitle"
+              style="width: 60%;">
+            <input type="text" placeholder="Blog Short Description (Max Word 36)" id="BlogInput" name="shortDescri">
+            <textarea name="descri" id="BlogInput" cols="30" rows="5"
+              placeholder="Blog Full Description here"></textarea>
+            <button type="submit" class="blogBtn-Post">Upload my Blog</button>
+          </div>
+        </form>
+
+        <div class="allPost">
+          {{#each Titel}}
+          <div class="postBox">
+            <p><span>Title </span> : {{this.blogTitle}}</p>
+            <p><span>Short Description </span> : {{this.shortDescri}}</p>
+            <p><span>Description </span> : {{this.description}}</p>
+            <div class="BtnDiv">
+              <button class="blogBtn"
+                onclick="EditBlog('{{this._id}}','{{this.blogTitle}}','{{this.shortDescri}}','{{this.description}}')">EDIT</button>
+              {{!-- <form action="/deleteBlog" method="post"> --}}
+                <button class="blogBtn-del" onclick="deleteBlogOption('{{this._id}}')">DELETE</button>
+                {{!--
+              </form> --}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="EditBlogContainer">
+        <div class="editPostInput">
+          <form action="/editBlog" method="POST" style="width: 100%;">
+            <div class="BlogRow">
+              <input type="text" value="" id="titel" name="blogTitle" style="width: 60%; " >
+              <input type="text" value="" id="shortDescri" name="shortDescri">
+              <textarea type="text" value="" id="descri" name="descri" cols="30" rows="5"></textarea>
+            </div>
+            <div class="blogRowbottom">
+              <button class="blogBtn-Post" onclick="closeBlog()" type="button">Cancel</button>
+              <input type="text" value="" name="id" id="blogId" style="display: none;">
+              <button type="submit" class="blogBtn-Post">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+      <div class="DeleteBlogBox">
+        <div class="getPermission">
+          <div class="BlogRow">
+            <span>
+              <h6>Do You want to Delete Your Blog ?</h6>
+            </span>
+          </div>
+          <div class="BlogRowBottom">
+            <div class="BlogRowBtn">
+              <button class="blogBtn-Post" onclick="deleteBlog()" type="button">No</button>
+              <form action="/deleteBlog" method="post">
+                <button type="submit" class="blogBtn-Post" value="" name="id" id="delBlogId">Yes</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="/js/scripte.js"></script>
+</body>
+
+</html>

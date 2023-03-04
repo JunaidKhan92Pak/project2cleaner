@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{{>links}}
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="LoginMain">
+        <div class="loginContent">
+            <div class="loginHead">
+                <img src="/images/pngwing.com.png" alt="" srcset="">
+                <p>Wellcome</p>
+            </div>
+            <form id="login_form" action="/login" method="post" >
+                <div class="loginbottom">
+                    <div class="loginInputRow">
+                        <span>Email</span>
+                        <input type="email" name="email" id="email" placeholder="Enter Your Email Address " required>
+                    </div>
+                    <div class="loginInputRow">
+                        <span>Password</span>
+                        <input type="password" name="password" id="password" placeholder="Enter Your Password">
+                    </div>
+                    <div class="loginBtn">
+                        <button type="submit">LOGIN</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/scripte.js"></script>
+</body>
+
+</html>

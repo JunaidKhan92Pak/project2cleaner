@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>links}}
+    <title>EditProfile</title>
+</head>
+
+<body>
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <form action="/editProfile" method="post">
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Frist Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="firstname" value="{{FName}}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Last Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="lastname" id="lastname" value="{{LastName}}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="email" class="form-control" name="email" id="email" value="{{EMAIL}}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Phone</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input class="form-control" type="tel" name="phone" id="phone" value="{{Phone}}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Date of Brith</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="date" class="form-control" name="dob" id="db" value="{{dob}}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Address</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="address" id="address" value="{{Address}}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Job Titel</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="JobTitel" id="JobTitel" value="{{JobTitel}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9 text-secondary">
+                            <button type="submit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>

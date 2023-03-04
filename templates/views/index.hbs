@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>links}}
+    <title>Cleaners</title>
+</head>
+
+<body>
+    <div class="header_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo"><a href="/"><img src="images/logo.png"></a></div>
+                     <div class="menu_text">
+                        <ul>
+                            <div class="togle_3">
+                                <div class="menu_main">
+                                    {{#if FName}}
+                                    <div class="padding_left0">
+                                        <span class="padding_left0" style="padding-left: 40px;"><a
+                                                href="/profile">{{FName}}</a></span>
+                                    </div>
+                                    {{else}}
+                                    <div class="padding_left0">
+                                        <span class="padding_left0"><a onclick="openRegister()">Register</a></span>
+                                        <span class="padding_left0"><a href="/login">Login</a></span>
+                                    </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <div id="myNav" class="overlay">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <div class="overlay-content">
+                                    <a href="/">Home</a>
+                                    <a href="/services">Services</a>
+                                    <a href="/about">About</a>
+                                    <a href="/contact">Contact Us</a>
+                                </div>
+                            </div>
+                            <span class="navbar-toggler-icon"></span>
+                            <span onclick="openNav()"><img src="images/toggle-icon.png" class="toggle_menu"></span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner section start -->
+        <div class="banner_section layout_padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h1 class="banner_taital">Best YOUR</h1>
+                        <h1 class="banner_taital_1">house CLEAN</h1>
+                        <p class="banner_text">Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim</p>
+                        <div class="contact_bt"><a href="/contact">CONTACT US<span class="contact_padding"><img
+                                        src="images/contact-icon.png"></span></a></div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div><img src="images/img-1.png" class="image_1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header section end -->
+
+    <div class="allBlog">
+        <div class="blogHead">
+            <h1 class="services_taital"> <span>Our</span> <span style="color: #1f1f1f">Blogs</span>
+        </div>
+        <div class="UserBlogs">
+            {{#each Titel}}
+            <div class="blogsBox">
+                <div class="blogInfoRow">
+                    <p>Title : <span>{{this.blogTitle}}</span></p>
+                    <p>Short Description : <span>{{this.shortDescri}}.....</span></p>
+                </div>
+                <div class="readMoreBtn">
+                    <form action="/blogs" method="post">
+                        <input type="text" name="name" style="display: none;" value={{this._id}}>
+                        <button type="submit">Read Full Description...</button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+
+    <!-- services section start -->
+    <div class="services_section layout_padding">
+        <div class="container">
+            <h1 class="services_taital"> <span>Our</span> <span style="color: #1f1f1f">Services</span> <img
+                    src="images/icon-1.png"> </h1>
+            <p class="services_text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua</p>
+            <div class="images_main_1">
+                <div class="row">
+
+                    <div class="col-sm-5">
+                        <div class="image_4"><img src="images/img-4.png"></div>
+
+                    </div>
+                    <div class="col-sm-7">
+                        <h2 class="consectetur_text">Pressing Clothes</h2>
+                        <p class="dummy_text">It is a long established fact that a reader will be distracted by the
+                            readable content of a page when looking at its layout. The point of using Lorem</p>
+                    </div>
+                </div>
+            </div>
+            <div class="images_main">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h2 class="consectetur_text_1">Vacuuming House</h2>
+                        <p class="dummy_text_1">It is a long established fact that a reader will be distracted by the
+                            readable content of a page when looking at its layout. The point of using Lorem</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="image_4"><img src="images/img-5.png"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="images_main_1">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="image_4"><img src="images/img-6.png"></div>
+                    </div>
+                    <div class="col-sm-7">
+                        <h2 class="consectetur_text">Windows Cleaning</h2>
+                        <p class="dummy_text">It is a long established fact that a reader will be distracted by the
+                            readable content of a page when looking at its layout. The point of using Lorem</p>
+                    </div>
+                </div>
+            </div>
+            <div class="images_main">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h2 class="consectetur_text_1">Laundering</h2>
+                        <p class="dummy_text_1">It is a long established fact that a reader will be distracted by the
+                            readable content of a page when looking at its layout. The point of using Lorem</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="image_4"><img src="images/img-7.png"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services section start -->
+    <!-- about section start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div><img src="images/img-2.png" class="image_2"></div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="services_taital"><span>About </span><span style="color: #1f1f1f">Cleaning <img
+                                src="images/icon-1.png"> </span></h1>
+                    <p class="ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam,</p>
+                    <div class="contact_bt_1"><a href="#">READ MORE<span class="contact_padding"><img
+                                    src="images/contact-icon1.png"></span></a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- about section end -->
+    <!-- newsletter section start -->
+    <div class="newsletter_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="newsletter_text">Newsletter</h1>
+                    <p class="tempor_text">Tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="mail_bt_main">
+                        <input type="text" class="mail_text" placeholder="ENTER YOUR MAIL" name="Enter Tour Mail">
+                        <div class="subscribe_bt"><a href="#">SUBSCRIBE</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- newsletter section end -->
+    <!-- footer section start -->
+    <div class="footer_section layout_padding">
+        <div class="container">
+            <div class="footer_main">
+                <div class="footer_left">
+                    <h1 class="contact_taital"><span>Contact </span><span>Us</span></h1>
+                </div>
+                <div class="footer_left">
+                    <div class="location_text"><a href="#"><img src="images/map-icon.png"><span
+                                class="padding_left_15">Locations</span></a></div>
+                </div>
+                <div class="footer_left">
+                    <div class="location_text"><a href="#"><img src="images/call-icon.png"><span
+                                class="padding_left_15">+71 9876543210</span></a></div>
+                </div>
+                <div class="footer_left">
+                    <div class="location_text"><a href="#"><img src="images/map-icon.png"><span
+                                class="padding_left_15">demo@gmail.com</span></a></div>
+                </div>
+            </div>
+            <div class="contact_section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mail_section">
+                            <input type="" class="email_text" placeholder="Name" name="Name">
+                            <input type="" class="email_text" placeholder="Email" name="Email">
+                            <input type="" class="email_text" placeholder="Phone Number" name="Phone Number">
+                            <textarea class="massage_text" placeholder="Message" rows="5" id="comment"
+                                name="Message"></textarea>
+                            <div class="send_bt"><a href="#">send</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="map_main">
+                            <div class="map-responsive">
+                                <iframe
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Adda+Gamber+Okara+Pakistan"
+                                    width="600" height="280" frameborder="0" style="border:0; width: 100%;"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="social_icon">
+                            <ul>
+                                <li><a href="#"><img src="images/fb-icon1.png"></a></li>
+                                <li><a href="#"><img src="images/twitter-icon1.png"></a></li>
+                                <li><a href="#"><img src="images/linkden-icon1.png"></a></li>
+                                <li><a href="#"><img src="images/instagram-icon1.png"></a></li>
+                                <h6 class="follow_text">Follow Us</h6>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section end -->
+    <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <p class="copyright_text">Copyright 2023 All Right Reserved By <a
+                    href="https://www.fiverr.com/junaidsultan92?public_mode=true">junaidsultan92</a></p>
+        </div>
+    </div>
+    <!-- registerForm Section start -->
+    {{>registrtion}}
+    <script src="/js/scripte.js"></script>
+</body>
+
+</html>
